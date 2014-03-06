@@ -12,6 +12,17 @@
 @interface NSArray (Safe)
 
 + (void)safe;
++ (void)exchangeOriginalMethod:(Method)originalMethod withNewMethod:(Method)newMethod;
++ (Method)arrayMethodOfSelector:(SEL)selector;
+- (id)objectAtIndexOrNil:(NSUInteger)index;
 
+@end
+
+
+@interface NSMutableArray (Safe)
+
++ (Method)mutaleArrayMethodOfSelector:(SEL)selector;
+- (id)objectAtIndexOrNilM:(NSUInteger)index;
+- (void)safe_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject;
 
 @end

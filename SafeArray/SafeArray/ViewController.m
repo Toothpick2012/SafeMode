@@ -28,6 +28,10 @@
     for (int i=0; i<5; i++) {
         NSLog(@"NO%d:%@",i,[b objectAtIndex:i]);
     }
+    [b replaceObjectAtIndex:1 withObject:@"8"];
+    [b replaceObjectAtIndex:7 withObject:@"8"];
+    [b replaceObjectAtIndex:1 withObject:nil];
+    NSLog(@"%@",b);
 }
 
 - (void)didReceiveMemoryWarning

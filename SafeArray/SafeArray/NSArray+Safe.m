@@ -13,21 +13,53 @@
 
 + (void)safe
 {
-    Method method_ObjectAtIndex = class_getInstanceMethod(NSClassFromString(@"__NSArrayI"),@selector(objectAtIndex:));
-    Method method_ObjectAtIndexM = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"),@selector(objectAtIndex:));
-    Method method_SafeObjectAtIndex = class_getInstanceMethod(NSClassFromString(@"NSArray"),@selector(objectAtIndexOrNil:));
-    Method method_SafeObjectAtIndexM = class_getInstanceMethod(NSClassFromString(@"NSArray"),@selector(objectAtIndexOrNilM:));//这个方法就是一会自己写的拓展进nsarray中的
-    method_exchangeImplementations(method_ObjectAtIndex, method_SafeObjectAtIndex);//然后交换就是这么简单 不过这个危险性也是极大的比如整个系统所有的调用这个原生api的调用就全都走到你这来了、必须必须要确保正确性……
-    method_exchangeImplementations(method_ObjectAtIndexM, method_SafeObjectAtIndexM);
+    //NSArray
+    [NSArray exchangeOriginalMethod:[self arrayMethodOfSelector:@selector(objectAtIndex:)] withNewMethod:[NSArray arrayMethodOfSelector:@selector(objectAtIndexOrNil:)]];
+    
+    //NSMutableArray
+    [NSArray exchangeOriginalMethod:[NSMutableArray mutaleArrayMethodOfSelector:@selector(objectAtIndex:)] withNewMethod:[NSMutableArray mutaleArrayMethodOfSelector:@selector(objectAtIndexOrNilM:)]];
+    [NSArray exchangeOriginalMethod:[NSMutableArray mutaleArrayMethodOfSelector:@selector(replaceObjectAtIndex:withObject:)] withNewMethod:[NSMutableArray mutaleArrayMethodOfSelector:@selector(safe_replaceObjectAtIndex:withObject:)]];
 }
+
++ (void)exchangeOriginalMethod:(Method)originalMethod withNewMethod:(Method)newMethod
+{
+    method_exchangeImplementations(originalMethod, newMethod);
+}
+
+#pragma mark - NSArray
++ (Method)arrayMethodOfSelector:(SEL)selector
+{
+    return class_getInstanceMethod(NSClassFromString(@"__NSArrayI"),selector);
+}
+
 
 - (id)objectAtIndexOrNil:(NSUInteger)index
 {
     return (index < [self count]) ? [self objectAtIndexOrNil:index] : nil;
 }
+
+@end
+
+
+@implementation NSMutableArray (Safe)
+
+
+#pragma mark - NSMutableArray
++ (Method)mutaleArrayMethodOfSelector:(SEL)selector
+{
+    return class_getInstanceMethod(NSClassFromString(@"__NSArrayM"),selector);
+}
+
 - (id)objectAtIndexOrNilM:(NSUInteger)index
 {
     return (index < [self count]) ? [self objectAtIndexOrNilM:index] : nil;
+}
+
+- (void)safe_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
+{
+    if ((index < [self count])&&anObject) {
+        [self safe_replaceObjectAtIndex:index withObject:anObject];
+    }
 }
 
 @end
