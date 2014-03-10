@@ -74,6 +74,7 @@
 @end
 
 
+#pragma mark - NSMutableDictionary
 @implementation NSMutableDictionary (Safe)
 
 + (Method)methodOfSelector:(SEL)selector
