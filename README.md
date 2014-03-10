@@ -10,6 +10,6 @@ ps:不建议在测试阶段使用
 
 How To Use 使用 
 ----------
--添加“NSArray+Safe”到项目，import "NSArray+Safe.h"
--执行方法[NSArray safe]
+- 添加“NSArray+Safe”到项目，import "NSArray+Safe.h"
+- 执行方法[NSArray safe]
 
