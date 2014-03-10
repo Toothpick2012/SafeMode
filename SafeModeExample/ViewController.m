@@ -1,13 +1,13 @@
 //
 //  ViewController.m
-//  SafeArray
+//  SafeModeExample
 //
-//  Created by qiu  on 14-3-6.
+//  Created by qiu  on 14-3-10.
 //  Copyright (c) 2014年 qiu . All rights reserved.
 //
 
 #import "ViewController.h"
-#import "NSArray+Safe.h"
+#import "SafeMode.h"
 
 @interface ViewController ()
 
@@ -19,11 +19,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [NSArray safe];
+    [SafeMode safe];
+    
     NSArray *a = [NSArray arrayWithObjects:@"0",@"1",nil];
     for (int i=0; i<5; i++) {
         NSLog(@"NO%d:%@",i,[a objectAtIndex:i]);
     }
+    
     NSMutableArray *b = [NSMutableArray arrayWithObjects:@"0",@"1",@"2",nil];
     for (int i=0; i<5; i++) {
         NSLog(@"NO%d:%@",i,[b objectAtIndex:i]);
@@ -32,6 +34,9 @@
     [b replaceObjectAtIndex:7 withObject:@"8"];
     [b replaceObjectAtIndex:1 withObject:nil];
     NSLog(@"%@",b);
+    
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+    [d setObject:nil forKey:@"hello"];
 }
 
 - (void)didReceiveMemoryWarning

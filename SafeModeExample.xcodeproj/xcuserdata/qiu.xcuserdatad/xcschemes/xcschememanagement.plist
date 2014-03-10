@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SafeArray.xcscheme</key>
+		<key>SafeModeExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4102FEA318C84F1700F14F0D</key>
+		<key>411B390D18CDA5FE009DEDE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4102FEC418C84F1700F14F0D</key>
+		<key>411B392E18CDA5FE009DEDE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

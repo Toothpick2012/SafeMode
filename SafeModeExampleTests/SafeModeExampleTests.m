@@ -1,18 +1,18 @@
 //
-//  SafeArrayTests.m
-//  SafeArrayTests
+//  SafeModeExampleTests.m
+//  SafeModeExampleTests
 //
-//  Created by qiu  on 14-3-6.
+//  Created by qiu  on 14-3-10.
 //  Copyright (c) 2014年 qiu . All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SafeArrayTests : XCTestCase
+@interface SafeModeExampleTests : XCTestCase
 
 @end
 
-@implementation SafeArrayTests
+@implementation SafeModeExampleTests
 
 - (void)setUp
 {

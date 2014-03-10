@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4102FEA318C84F1700F14F0D"
-               BuildableName = "SafeArray.app"
-               BlueprintName = "SafeArray"
-               ReferencedContainer = "container:SafeArray.xcodeproj">
+               BlueprintIdentifier = "411B390D18CDA5FE009DEDE9"
+               BuildableName = "SafeModeExample.app"
+               BlueprintName = "SafeModeExample"
+               ReferencedContainer = "container:SafeModeExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4102FEC418C84F1700F14F0D"
-               BuildableName = "SafeArrayTests.xctest"
-               BlueprintName = "SafeArrayTests"
-               ReferencedContainer = "container:SafeArray.xcodeproj">
+               BlueprintIdentifier = "411B392E18CDA5FE009DEDE9"
+               BuildableName = "SafeModeExampleTests.xctest"
+               BlueprintName = "SafeModeExampleTests"
+               ReferencedContainer = "container:SafeModeExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4102FEA318C84F1700F14F0D"
-            BuildableName = "SafeArray.app"
-            BlueprintName = "SafeArray"
-            ReferencedContainer = "container:SafeArray.xcodeproj">
+            BlueprintIdentifier = "411B390D18CDA5FE009DEDE9"
+            BuildableName = "SafeModeExample.app"
+            BlueprintName = "SafeModeExample"
+            ReferencedContainer = "container:SafeModeExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4102FEA318C84F1700F14F0D"
-            BuildableName = "SafeArray.app"
-            BlueprintName = "SafeArray"
-            ReferencedContainer = "container:SafeArray.xcodeproj">
+            BlueprintIdentifier = "411B390D18CDA5FE009DEDE9"
+            BuildableName = "SafeModeExample.app"
+            BlueprintName = "SafeModeExample"
+            ReferencedContainer = "container:SafeModeExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4102FEA318C84F1700F14F0D"
-            BuildableName = "SafeArray.app"
-            BlueprintName = "SafeArray"
-            ReferencedContainer = "container:SafeArray.xcodeproj">
+            BlueprintIdentifier = "411B390D18CDA5FE009DEDE9"
+            BuildableName = "SafeModeExample.app"
+            BlueprintName = "SafeModeExample"
+            ReferencedContainer = "container:SafeModeExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
