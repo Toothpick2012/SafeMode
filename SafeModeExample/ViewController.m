@@ -37,6 +37,12 @@
     
     NSMutableDictionary *d = [NSMutableDictionary dictionary];
     [d setObject:nil forKey:@"hello"];
+    
+    NSLog(@"begin");
+    for (int i=0; i<200000; i++) {
+        [self.view addSubview:self.view];
+    }
+    NSLog(@"end");
 }
 
 - (void)didReceiveMemoryWarning

@@ -2,7 +2,7 @@
 //  SafeMode.h
 //  SafeArray
 //
-//  Created by qiu  on 14-3-6.
+//  Created by qiu  on 14-3-10.
 //  Copyright (c) 2014年 qiu . All rights reserved.
 //
 
@@ -30,4 +30,9 @@
 @interface NSMutableDictionary (Safe)
 + (Method)methodOfSelector:(SEL)selector;
 - (void)safe_setObject:(id)anObject forKey:(id<NSCopying>)aKey;
+@end
+
+@interface UIView (Safe)
++ (Method)methodOfSelector:(SEL)selector;
+- (void)safe_addSubview:(UIView *)view;
 @end

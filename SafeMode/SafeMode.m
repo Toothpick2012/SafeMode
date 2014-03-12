@@ -2,7 +2,7 @@
 //  NSArray+Safe.m
 //  SafeArray
 //
-//  Created by qiu  on 14-3-6.
+//  Created by qiu  on 14-3-10.
 //  Copyright (c) 2014年 qiu . All rights reserved.
 //
 
@@ -23,6 +23,9 @@
         
         //NSMutableDictionary
         [self exchangeOriginalMethod:[NSMutableDictionary methodOfSelector:@selector(setObject:forKey:)] withNewMethod:[NSMutableDictionary methodOfSelector:@selector(safe_setObject:forKey:)]];
+        
+        //UIView
+        [self exchangeOriginalMethod:[UIView methodOfSelector:@selector(addSubview:)] withNewMethod:[UIView methodOfSelector:@selector(safe_addSubview:)]];
     });
 }
 
@@ -90,6 +93,23 @@
     else
     {
         [self removeObjectForKey:aKey];
+    }
+}
+
+@end
+
+#pragma mark - UIView
+@implementation UIView (Safe)
+
++ (Method)methodOfSelector:(SEL)selector
+{
+    return class_getInstanceMethod(NSClassFromString(@"UIView"),selector);
+}
+
+- (void)safe_addSubview:(UIView *)view
+{
+    if (self!=view) {
+        [self safe_addSubview:view];
     }
 }
 
